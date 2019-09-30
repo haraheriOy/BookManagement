@@ -42,7 +42,7 @@ namespace BookMnagement.ViewModels
 
 		async void OnSignUpButtonClicked (object sender, EventArgs e)
 		{
-			var user = new BookMnagement.Models.User () {
+			var user = new BookMnagement.Models.TemporaryUser () {
 				Username = usernameEntry.Text,
 				Password = passwordEntry.Text,
 				Email = emailEntry.Text
@@ -63,7 +63,7 @@ namespace BookMnagement.ViewModels
 			}
 		}
 
-		bool AreDetailsValid (BookMnagement.Models.User user)
+		bool AreDetailsValid (BookMnagement.Models.TemporaryUser user)
 		{
 			return (!string.IsNullOrWhiteSpace (user.Username) && !string.IsNullOrWhiteSpace (user.Password) && !string.IsNullOrWhiteSpace (user.Email) && user.Email.Contains ("@"));
 		}

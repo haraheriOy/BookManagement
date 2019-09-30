@@ -49,7 +49,7 @@ namespace BookMnagement.ViewModels
 
 		async void OnLoginButtonClicked (object sender, EventArgs e)
 		{
-			var user = new BookMnagement.Models.User {
+			var user = new BookMnagement.Models.TemporaryUser {
 				Username = usernameEntry.Text,
 				Password = passwordEntry.Text
 			};
@@ -65,7 +65,7 @@ namespace BookMnagement.ViewModels
 			}
 		}
 
-		bool AreCredentialsCorrect (BookMnagement.Models.User user)
+		bool AreCredentialsCorrect (BookMnagement.Models.TemporaryUser user)
 		{
 			return user.Username == BookMnagement.Models.Constants.Username && user.Password == BookMnagement.Models.Constants.Password;
 		}

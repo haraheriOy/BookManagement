@@ -20,17 +20,22 @@ namespace BookMnagement.Views
 
 		async void OnLoginButtonClicked (object sender, EventArgs e)
 		{
-            var user = new BookMnagement.Models.User
+            var tempUser = new BookMnagement.Models.TemporaryUser
             {
                 Username = usernameEntry.Text,
                 Password = passwordEntry.Text
             };
-            string sql = "select * from SQLiteItem where UserName = ?";
-            IEnumerable < Models.SQLiteItem > data = _db.ExeSql(sql, user.Username);
+            string sql = "select * from DB_USER_MASTER where USER_NAME = ?";
+            IEnumerable < Models.DB_USER_MASTER > data = _db.ExeSql(sql, tempUser.Username);
             //data.GetEnumerator();
-            foreach (Models.SQLiteItem userdata in data)
+            if (data.Equals(null))
             {
-                if (userdata.Password.Equals(user.Password))
+                messageLabel.Text = "not data";
+                passwordEntry.Text = string.Empty;
+            }
+            foreach (Models.DB_USER_MASTER userdata in data)
+            {
+                if (userdata.PASSWORD.Equals(tempUser.Password))
                 {
                     App.IsUserLoggedIn = true;
                     Navigation.InsertPageBefore(new MainPage(), this);
@@ -56,7 +61,7 @@ namespace BookMnagement.Views
             */
 		}
 
-		bool AreCredentialsCorrect (BookMnagement.Models.User user)
+		bool AreCredentialsCorrect (BookMnagement.Models.TemporaryUser user)
 		{
 			return user.Username == BookMnagement.Models.Constants.Username && user.Password == BookMnagement.Models.Constants.Password;
 		}
