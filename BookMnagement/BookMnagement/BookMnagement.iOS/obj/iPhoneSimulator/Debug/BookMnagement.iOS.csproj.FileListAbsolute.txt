@@ -127,3 +127,4 @@ D:\プログラム\BookManagement\BookMnagement\BookMnagement\BookMnagement.iOS\
 D:\プログラム\BookManagement\BookMnagement\BookMnagement\BookMnagement.iOS\obj\iPhoneSimulator\Debug\BookMnagement.iOS.csproj.CopyComplete
 D:\プログラム\BookManagement\BookMnagement\BookMnagement\BookMnagement.iOS\obj\iPhoneSimulator\Debug\BookMnagement.iOS.exe
 D:\プログラム\BookManagement\BookMnagement\BookMnagement\BookMnagement.iOS\obj\iPhoneSimulator\Debug\BookMnagement.iOS.pdb
+D:\プログラム\BookManagement\BookMnagement\BookMnagement\BookMnagement.iOS\bin\iPhoneSimulator\Debug\BookMnagement.dll.mdb

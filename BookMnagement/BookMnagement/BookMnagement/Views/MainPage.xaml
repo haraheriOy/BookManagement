@@ -5,6 +5,7 @@
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<StackLayout>
+            <Button Text="Lending" Clicked="OnLendingButtonClicked"></Button>
 			<Label Text="Main app content goes here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>

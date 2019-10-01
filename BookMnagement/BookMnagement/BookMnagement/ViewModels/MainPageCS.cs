@@ -12,20 +12,28 @@ namespace BookMnagement.ViewModels
 			};
 			toolbarItem.Clicked += OnLogoutButtonClicked;
 			ToolbarItems.Add (toolbarItem);
+            var lendingButtton = new Button { Text = "Lending"  };
+            lendingButtton.Clicked += OnLendingButtonClicked;
 
-			Title = "Main Page";
-			Content = new StackLayout { 
+            Title = "Main Page";
+            StackLayout Content = new StackLayout { 
 				Children = {
-					new Label {
+                    lendingButtton
+					/*new Label {
 						Text = "Main app content goes here",
 						HorizontalOptions = LayoutOptions.Center,
 						VerticalOptions = LayoutOptions.CenterAndExpand
-					}
+					}*/
 				}
 			};
 		}
 
-		async void OnLogoutButtonClicked (object sender, EventArgs e)
+        public void OnLendingButtonClicked(object sender, EventArgs e)
+        {
+            
+        }
+
+        async void OnLogoutButtonClicked (object sender, EventArgs e)
 		{
 			App.IsUserLoggedIn = false;
 			Navigation.InsertPageBefore (new LoginPageCS (), this);

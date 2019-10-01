@@ -48,7 +48,7 @@ namespace BookMnagement.Models
         }
 
         // BOOK_MASTERテーブルの更新処理
-        public int Update_DB_BOOK_MASTER(DB_USER_MASTER item)
+        public int Update_DB_BOOK_MASTER(DB_BOOK_MASTER item)
         {
             lock (Locker)
             {
@@ -57,7 +57,7 @@ namespace BookMnagement.Models
         }
 
         // BOOK_MASTERテーブルの追加処理
-        public int Insert_DB_BOOK_MASTER(DB_USER_MASTER item)
+        public int Insert_DB_BOOK_MASTER(DB_BOOK_MASTER item)
         {
             lock (Locker)
             {
@@ -84,9 +84,15 @@ namespace BookMnagement.Models
         }
 
         // USER_MASTERテーブル内をUSER_NAMEから検索
-        public IEnumerable<Models.DB_USER_MASTER> ExeSql(string sql)
+        public IEnumerable<Models.DB_USER_MASTER> ExeSqlUserM(string sql)
         {
             return _db.Query<Models.DB_USER_MASTER>(sql);
+        }
+
+        // USER_MASTERテーブル内をUSER_NAMEから検索
+        public IEnumerable<Models.DB_BOOK_MASTER> ExeSqlBookM(string sql)
+        {
+            return _db.Query<Models.DB_BOOK_MASTER>(sql);
         }
 
         // USER_MASTERテーブル内をUSER_NAMEから検索

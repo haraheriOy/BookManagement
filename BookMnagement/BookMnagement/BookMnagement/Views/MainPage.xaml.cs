@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace BookMnagement.Views
 {
 	public partial class MainPage : ContentPage
 	{
-		public MainPage ()
+        readonly Models.TodoRepository _db = new Models.TodoRepository();
+        public MainPage ()
 		{
 			InitializeComponent ();
 		}
@@ -16,5 +18,27 @@ namespace BookMnagement.Views
 			Navigation.InsertPageBefore (new LoginPage (), this);
 			await Navigation.PopAsync ();
 		}
-	}
+        public void OnLendingButtonClicked(object sender, EventArgs e)
+        {
+            var item = new Models.DB_BOOK_MASTER();
+            setItem(item);
+            _db.Update_DB_BOOK_MASTER(item);
+            string sql = "select * from DB_BOOK_MASTER";
+            IEnumerable<Models.DB_BOOK_MASTER> data = _db.ExeSqlBookM(sql);
+        }
+
+        private void setItem(Models.DB_BOOK_MASTER item)
+        {
+            //var item = new Models.DB_BOOK_MASTER();
+
+            DateTime arrivalYmd = DateTime.Now;
+            item.BOOK_ID = 1111;
+            item.TITLE = "TEST";
+            item.AUTHOR = "test";
+            item.PUBISHER = "変更社";
+            item.CATEGORY_ID = 1;
+            item.ARRIBAL_YMD = arrivalYmd;
+            item.DISPOSAL_FLG = false;
+        }
+    }
 }
