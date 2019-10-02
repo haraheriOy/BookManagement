@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookMnagement.Android", "BookMnagement\BookMnagement.Android\BookMnagement.Android.csproj", "{8CDAA2EC-B020-4616-88F8-C5D4D961A28B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookMnagement.iOS", "BookMnagement\BookMnagement.iOS\BookMnagement.iOS.csproj", "{43060D01-BE2F-49DC-ACCD-39CFDFB0B89D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookMnagement", "BookMnagement\BookMnagement\BookMnagement.csproj", "{69B4ECC1-C4CD-40EE-9594-3C8F29C21A56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookMnagement", "BookMnagement\BookMnagement\BookMnagement.csproj", "{69B4ECC1-C4CD-40EE-9594-3C8F29C21A56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,7 +38,6 @@ Global
 		{8CDAA2EC-B020-4616-88F8-C5D4D961A28B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{8CDAA2EC-B020-4616-88F8-C5D4D961A28B}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 		{43060D01-BE2F-49DC-ACCD-39CFDFB0B89D}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{43060D01-BE2F-49DC-ACCD-39CFDFB0B89D}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
 		{43060D01-BE2F-49DC-ACCD-39CFDFB0B89D}.Debug|Any CPU.Deploy.0 = Debug|iPhoneSimulator
 		{43060D01-BE2F-49DC-ACCD-39CFDFB0B89D}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{43060D01-BE2F-49DC-ACCD-39CFDFB0B89D}.Debug|iPhone.Build.0 = Debug|iPhone

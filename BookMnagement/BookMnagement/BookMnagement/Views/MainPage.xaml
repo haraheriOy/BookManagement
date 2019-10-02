@@ -3,10 +3,35 @@
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="Logout" Clicked="OnLogoutButtonClicked" />
 	</ContentPage.ToolbarItems>
-	<ContentPage.Content>
-		<StackLayout>
+    <ContentPage.Content
+        ViewModelLocator.AutowireViewModel="True">
+        <StackLayout>
+        <StackLayout Orientation="Horizontal"
+                 VerticalOptions="Start">
+            <BoxView Color="Red" />
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical"
+                       HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="@okazuki" />
+                            <Label Text="かずき@MBPぽちった"
+                     HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                        <Label Text="YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="EndAndExpand">
+                    <Button Text="Like" />
+                        <Button Text="RT" />
+                    </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout>
             <Button Text="Lending" Clicked="OnLendingButtonClicked"></Button>
 			<Label Text="Main app content goes here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
 		</StackLayout>
-	</ContentPage.Content>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

@@ -15,8 +15,10 @@ namespace BookMnagement.Models
         {
             _db = DependencyService.Get<Models.ISQLite>().GetConnection();
             set_DB_BOOK_MASTER();
+            IEnumerable<Models.DB_BOOK_MASTER> data = _db.Query<Models.DB_BOOK_MASTER>("SELECT * FROM DB_BOOK_MASTER");
             set_DB_USER_MASTER();
-            IEnumerable<Models.DB_USER_MASTER> data = _db.Query<Models.DB_USER_MASTER>("SELECT * FROM DB_USER_MASTER");
+            //IEnumerable<Models.DB_USER_MASTER> data = _db.Query<Models.DB_USER_MASTER>("SELECT * FROM DB_USER_MASTER");
+            data = _db.Query<Models.DB_BOOK_MASTER>("SELECT * FROM DB_BOOK_MASTER");
             // レンタル履歴のリフレッシュ
             _db.DropTable<DB_RENTAL_LIST>();
             _db.CreateTable<DB_RENTAL_LIST>();
@@ -121,11 +123,11 @@ namespace BookMnagement.Models
             var item = new DB_BOOK_MASTER();
 
             DateTime arrivalYmd = DateTime.Now;
-            item.BOOK_ID = 1111;
+            item.BOOK_ID = 1;
             item.TITLE = "TEST";
             item.AUTHOR = "test";
             item.PUBISHER = "test社";
-            item.CATEGORY_ID = 1;
+            item.CATEGORY_ID = 10;
             item.ARRIBAL_YMD = arrivalYmd;
             item.DISPOSAL_FLG = false;
             _db.Insert(item);
